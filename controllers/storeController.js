@@ -4,7 +4,7 @@ const getStores = async (req, res) => {
   const stores = await store.find();
   if (!stores) {
     res.status(400);
-    throw new Error("No Goals Found");
+    throw new Error("No products found");
   }
   res.status(200).json({ products: stores });
 };
@@ -14,7 +14,7 @@ const getStore = async (req, res) => {
   const stored = await store.findById(id);
   if (!stored) {
     res.status(400);
-    throw new Error("No Goal Found");
+    throw new Error("No product found");
   }
   res.status(200).json({ product: stored });
 };
